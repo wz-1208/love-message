@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我爱你，老婆</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: pink;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+        h1 {
+            color: red;
+            font-size: 3em;
+        }
+        .heart {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            transform: rotate(45deg);
+            animation: float 3s ease-in-out infinite;
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+        .heart::after {
+            left: 50px;
+            top: 0;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(45deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(45deg);
+            }
+            100% {
+                transform: translateY(0) rotate(45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>我爱你，老婆</h1>
+    <div class="heart"></div>
+    <div class="heart" style="left: 20%; animation-delay: 1s;"></div>
+    <div class="heart" style="left: 50%; animation-delay: 2s;"></div>
+    <div class="heart" style="left: 80%; animation-delay: 3s;"></div>
+</body>
+</html>
